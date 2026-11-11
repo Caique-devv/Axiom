@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axiom — AI Chat</title>
+<script>try{var t=localStorage.getItem('axiom.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app" id="app">
+  <div class="overlay" id="overlay"></div>
+  <aside class="sidebar" id="sidebar" aria-label="Barra lateral" data-i18n-aria="sidebar"></aside>
+  <main class="main" id="main" data-view="chat">
+    <header class="topbar">
+      <button class="icon-btn" id="openSidebar" aria-label="Abrir barra lateral" data-i18n-aria="openSidebar" data-icon="panel"></button>
+      <button class="model-pill" id="providerBtn" type="button" aria-haspopup="menu" data-i18n-aria="chooseProvider" aria-label="Escolher provedor de IA"><span id="providerLabel">Axiom</span> <i data-icon="chevron"></i></button>
+      <button class="icon-btn" id="themeBtn" aria-label="Alternar tema" data-i18n-aria="toggleTheme"></button>
+    </header>
+    <section class="page" id="page" hidden></section>
+    <section class="chat" id="chat"></section>
+    <footer class="composer-wrap">
+      <div class="composer" id="composer">
+        <div class="attach-row" id="attachRow" hidden></div>
+        <div class="composer-main">
+          <button class="icon-btn" id="attachBtn" type="button" data-icon="image" data-i18n-aria="attach" data-i18n-title="attach" aria-label="Anexar imagem" title="Anexar imagem"></button>
+          <button class="icon-btn" id="imgModeBtn" type="button" data-icon="sparkles" data-i18n-aria="imageMode" data-i18n-title="imageMode" aria-label="Criar imagem" title="Criar imagem" aria-pressed="false"></button>
+          <textarea id="input" rows="1" placeholder="Envie uma mensagem para o Axiom" aria-label="Mensagem" data-i18n-ph="placeholder" data-i18n-aria="messageLabel"></textarea>
+          <button class="send" id="send" aria-label="Enviar" disabled data-icon="arrow"></button>
+        </div>
+        <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp,image/gif" multiple hidden>
+      </div>
+      <p class="disclaimer" data-i18n="disclaimer">O Axiom pode cometer erros. Considere verificar informações importantes.</p>
+    </footer>
+  </main>
+  <div class="modal-bg" id="modalBg" hidden></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
