@@ -179,15 +179,7 @@ O servidor escuta apenas em `127.0.0.1` (só a sua máquina acessa).
 - A API só responde ao endereço `localhost`/`127.0.0.1` e recusa pedidos que alteram dados vindos de outros sites (proteção contra CSRF e DNS rebinding). Trocar chaves só é aceito de conexões da própria máquina. Para desativar a edição de chaves pelo site: `DISABLE_KEY_EDITING=1` no `.env`. Se usar outro nome de host (por exemplo atrás de um proxy), liste-o em `ALLOWED_HOSTS` (separado por vírgulas, com a porta).
 - A **personalidade** fica no banco (`settings`), pois não é secreta.
 
-## Como compartilhar o projeto com outras pessoas
-
-Envie apenas o código. **Não inclua**: `server/.env` (suas chaves), `server/node_modules` (cada pessoa roda `npm install`) e `server/axiom.db` (suas conversas e imagens). Quem receber segue o `GUIA-CHAVES.md` para criar as próprias chaves, ou cola as chaves na página de Configurações.
-
 ## Observações
 
 - Não há autenticação: o banco é de uso pessoal e local. Não exponha o servidor na internet.
 - Se for versionar o projeto no Git, considere colocar `server/node_modules/` no `.gitignore` e decidir se `server/axiom.db` deve ser versionado (ele contém suas conversas).
-
-## Próximas etapas
-
-Login e perfil, markdown completo, busca no conteúdo das mensagens e, se o projeto crescer, migração do SQLite para um banco em nuvem.
